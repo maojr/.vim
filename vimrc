@@ -1,9 +1,13 @@
+set nowrap
 set number
 set nocompatible
 
 "Vim display tab:(>----),space:(-)
 set list
 set listchars=tab:>-,trail:-
+
+"Enable mouse support
+set mouse=a
 
 "tab,space settings
 set tabstop=4 " set the width of a TAB
