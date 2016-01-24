@@ -1,2 +1,2 @@
 # dotfiles
-My configurations in my Ubuntu Desktop.
+My configurations
