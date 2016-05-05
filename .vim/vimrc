@@ -1,6 +1,8 @@
 set nowrap
 set number
+set autoindent
 set nocompatible
+set cursorline
 
 "Vim display tab:(>----),space:(-)
 set list
@@ -8,15 +10,25 @@ set listchars=tab:>-,trail:-
 
 "Enable mouse support
 set mouse=a
+set backspace=2
 
 "tab,space settings
 set tabstop=4 " set the width of a TAB
 set shiftwidth=4
-set softtabstop=2 " set the number of columns for hitting a TAB key
+set softtabstop=4 " set the number of columns for hitting a TAB key
 set expandtab " Expand TABs to spaces　
 
+"search settings
+set ignorecase
+set smartcase
+
+"keeps the cursor in the middle of the page
+set scrolloff=999
+set laststatus=2 "showstatusline
+
 "set colortheme
-colorscheme desert
+colorscheme slate
+syntax on
 filetype plugin on
 
 "You-complete-me settings
