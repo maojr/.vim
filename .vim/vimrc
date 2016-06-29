@@ -2,7 +2,6 @@ set nowrap
 set number
 set autoindent
 set nocompatible
-set cursorline
 
 "Vim display tab:(>----),space:(-)
 set list
@@ -24,13 +23,18 @@ set smartcase
 
 "keeps the cursor in the middle of the page
 set scrolloff=999
-set laststatus=2 "showstatusline
 
 "set colortheme
 colorscheme slate
 syntax on
 filetype plugin on
 
+"Add custom headers
+autocmd bufnewfile *.py so /home/maojinrui/.vim/template/py.template
+
+"------------------------------------------------------"
+"set laststatus=2 "showstatusline
+"set cursorline   "underscore
 "You-complete-me settings
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion  = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion  = 1
