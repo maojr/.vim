@@ -4,22 +4,25 @@ set relativenumber
 set autoindent
 set nocompatible
 
-highlight ColorColumn ctermbg=gray
 set colorcolumn=120
+set encoding=utf-8
 
 "Vim display tab:(>----),space:(-)
 set list
 set listchars=tab:>-,trail:-
 
 "Enable mouse support
-"set mouse=a
+set mouse=a
 set backspace=2
+set t_Co=256
+set laststatus=2
 
 "tab,space settings
 set tabstop=4 " set the width of a TAB
 set shiftwidth=4
 set softtabstop=4 " set the number of columns for hitting a TAB key
 set expandtab " Expand TABs to spaces　
+set ruler
 
 "search settings
 "set ignorecase
