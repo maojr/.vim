@@ -1,2 +1,4 @@
-# dotfiles
-My configurations
+dotfiles
+========
+
+configurations on linux machines
