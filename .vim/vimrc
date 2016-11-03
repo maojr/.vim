@@ -1,10 +1,17 @@
-set wrap
-set number
-set relativenumber
-set autoindent
+"Gets rid of all the crap that
+"vim does to be vim compatible
 set nocompatible
 
+set ruler
+set undofile
+set visualbell
+set autoindent
 set encoding=utf-8
+
+"set Vim's numberwidth
+set number
+set relativenumber
+set numberwidth=1
 
 "Vim display tab:(>----),space:(-)
 set list
@@ -13,21 +20,29 @@ set listchars=tab:>-,trail:-
 "Enable mouse support
 set mouse=a
 set backspace=2
-set laststatus=2
 
-"tab,space settings
-set tabstop=4 " set the width of a TAB
-set shiftwidth=4
+"tab,space settings - all tabs to expand to four spaces
+set tabstop=4     " set the width of a TAB
 set softtabstop=4 " set the number of columns for hitting a TAB key
-set expandtab " Expand TABs to spaces　
-set ruler
+set expandtab     " Expand TABs to spaces　
+set shiftwidth=4
+"shiftround round indent to multiple of shiftwidth
+set shiftround
 
 "search settings
-"set ignorecase
+set gdefault
+set hlsearch
 set smartcase
+set showmatch
+set ignorecase
 
 "keeps the cursor in the middle of the page
-set scrolloff=999
+set scrolloff=3
+
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
 
 "set colortheme
 colorscheme slate
@@ -35,12 +50,13 @@ set t_Co=256    "to enable 256 colors in vim
 syntax on
 filetype plugin on
 
-"Add custom headers
+"add custom headers
 autocmd bufnewfile *.py so $HOME/.vim/template/py.template
 
-"------------------------------------------------------"
-"set laststatus=2 "showstatusline
-"set cursorline   "underscore
+"underscore
+"set cursorline
+"show statusline
+set laststatus=2 "showstatusline
 
 "config hjkl keys
 set nowrap
@@ -79,3 +95,11 @@ function! ToggleHiddenAll()
     endif
 endfunction
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
+
+"vim's mapping keys
+map - ddp
+map _ ddkP
+nnoremap <leader><space> :noh<cr>
+
+"save on losing focus
+au FocusLost * :wa
