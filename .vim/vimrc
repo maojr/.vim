@@ -41,10 +41,8 @@ autocmd bufnewfile *.py so $HOME/.vim/template/py.template
 "------------------------------------------------------"
 "set laststatus=2 "showstatusline
 "set cursorline   "underscore
-"You-complete-me settings
-"let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_autoclose_preview_window_after_insertion  = 1
 
+"config hjkl keys
 set nowrap
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
@@ -81,4 +79,3 @@ function! ToggleHiddenAll()
     endif
 endfunction
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
-
