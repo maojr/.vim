@@ -1,4 +1,4 @@
-dotfiles
+vimfiles
 ========
 
-configurations on linux machines
+my vim configurations
