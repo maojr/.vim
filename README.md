@@ -1,4 +1,2 @@
-Kim's Vim Configurations
+Jerry's Vim Configurations
 ========
-
-my vim configurations
