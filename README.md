@@ -1,2 +1,0 @@
-Jerry's Vim Configurations
-========
