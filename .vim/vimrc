@@ -132,7 +132,7 @@ onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
 "vim's abbreviations
 "@@ = myemail --- input my email
 "mb --- input my blogsite
-iabbrev memail 8769555@gmail.com
+iabbrev memail u013905837@gmail.com
 iabbrev msite http://tinyfun.org
 
 "save on losing focus
