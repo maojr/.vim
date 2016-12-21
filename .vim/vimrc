@@ -1,12 +1,12 @@
-"Gets rid of all the crap that
-"vim does to be vim compatible
+" Mao's vimfiles
+" Reference - LearnVimscriptTheHardWay
+" http://learnvimscriptthehardway.stevelosh.com/
 set nocompatible
-
 set ruler
 set undofile
 set visualbell
 set autoindent
-set encoding=utf-8
+"set encoding=utf-8
 
 "set Vim's numberwidth
 set number
@@ -18,8 +18,11 @@ set list
 set listchars=tab:>-,trail:-
 
 "Enable mouse support
-set mouse=a
-set backspace=2
+"set mouse=a
+"set backspace=2
+
+"leave the buffer content on terminal when exit
+set t_ti= t_te=
 
 "tab,space settings - all tabs to expand to four spaces
 set tabstop=4     " set the width of a TAB
@@ -32,21 +35,29 @@ set shiftround
 "search settings
 set gdefault
 set hlsearch
+set incsearch
 set smartcase
 set showmatch
 set ignorecase
 
 "keeps the cursor in the middle of the page
-set scrolloff=3
+set scrolloff=5
+"to enable 256 colors in vim
+set t_Co=256
 
 set wrap
 set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
+"encodings
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+
 "set colortheme
 colorscheme slate
-set t_Co=256    "to enable 256 colors in vim
 syntax on
 filetype plugin on
 
@@ -97,9 +108,37 @@ endfunction
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
 "vim's mapping keys
-map - ddp
-map _ ddkP
+"e - Move to the end of a word
+"w - Move forward to the beginning of a word
+"b - Move backward to the begining of a word
+"imap - mapping in Insert Mode
+"Note - always use norecursive mapping
+"map-unmap imap-iunmap
+noremap <up>    <nop>
+noremap <down>  <nop>
+noremap <left>  <nop>
+noremap <right> <nop>
+inoremap jk <esc>
+inoremap <c-d> <esc>ddO
+inoremap <c-u> <esc>vawUea
+inoremap <esc> <nop>
 nnoremap <leader><space> :noh<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+onoremap p i(
+"refer to - http://learnvimscriptthehardway.stevelosh.com/chapters/16.html
+onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+"vim's abbreviations
+"@@ = myemail --- input my email
+"mb --- input my blogsite
+iabbrev memail 8769555@gmail.com
+iabbrev msite http://tinyfun.org
 
 "save on losing focus
+"master the use of autocommands[au]
 au FocusLost * :wa
+autocmd BufNewFile * :write
+augroup learn_augroup
+    autocmd BufWrite * :sleep 200m
+augroup end
