@@ -3,7 +3,7 @@
 " http://learnvimscriptthehardway.stevelosh.com/
 set nocompatible
 set ruler
-set undofiles
+set undofile
 set undodir=/Users/xxx/.vimundos
 set visualbell
 set autoindent
