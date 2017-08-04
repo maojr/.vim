@@ -4,7 +4,7 @@
 set nocompatible
 set ruler
 set undofile
-set undodir=/Users/xxx/.vimundos
+set undodir=~/.vim/vimundos
 set visualbell
 set autoindent
 "set encoding=utf-8
