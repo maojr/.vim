@@ -35,7 +35,7 @@ set shiftround
 
 "search settings
 set gdefault
-set hlsearch
+"set hlsearch
 set incsearch
 set smartcase
 set showmatch
@@ -47,6 +47,7 @@ set scrolloff=5
 set t_Co=256
 
 set wrap
+set autoread
 set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
