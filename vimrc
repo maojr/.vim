@@ -143,3 +143,8 @@ autocmd BufNewFile * :write
 augroup learn_augroup
     autocmd BufWrite * :sleep 200m
 augroup end
+
+" gofmt & godef plugins
+" go fmt the golang code when save
+au BufWritePost *.go silent !gofmt -w %
+let g:godef_split=0
