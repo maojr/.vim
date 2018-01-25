@@ -48,9 +48,9 @@ set t_Co=256
 
 set wrap
 set autoread
-set textwidth=79
+"set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+"set colorcolumn=85
 
 "encodings
 set encoding=utf-8
@@ -107,7 +107,7 @@ function! ToggleHiddenAll()
         set showcmd
     endif
 endfunction
-nnoremap <S-h> :call ToggleHiddenAll()<CR>
+"nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
 "vim's mapping keys
 "e - Move to the end of a word
@@ -134,8 +134,6 @@ onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
 "vim's abbreviations
 "@@ = myemail --- input my email
 "mb --- input my blogsite
-iabbrev memail u013905837@gmail.com
-iabbrev msite http://tinyfun.org
 
 "save on losing focus
 "master the use of autocommands[au]
@@ -145,7 +143,10 @@ augroup learn_augroup
     autocmd BufWrite * :sleep 200m
 augroup end
 
-" gofmt & godef plugins
-" go fmt the golang code when save
+"gofmt & godef plugins
+"go fmt the golang code when save
 au BufWritePost *.go silent !gofmt -w %
 let g:godef_split=0
+
+"NERDCommenter
+let g:NERDSpaceDelims=1
